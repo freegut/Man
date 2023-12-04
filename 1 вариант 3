@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int n = 2; //кол-во сотрудников
+        int m = 2; //кол-во месяцев
+        int[][] a = new int[n][m];
+        int[] b = new int[n];
+        int i, j, s, k;
+        Scanner scanner = new Scanner(System.in);
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < m; j++) {
+                System.out.print("Введите зарплату " + (i + 1) + "-ого сотрудника за " + (j + 1) + " месяц ");
+                a[i][j] = scanner.nextInt();
+            }
+        }
+
+        System.out.println();
+        System.out.println("Вывод зарплаты");
+
+        for (i = 0; i < n; i++) {
+            s = 0;
+            for (j = 0; j < m; j++) {
+                System.out.print(" "+a[i][j]);
+                s += a[i][j];
+            }
+            b[i] = s;
+            System.out.println();
+        }
+
+        System.out.println();
+        System.out.print("Введите номер сотрудника: ");
+        k = scanner.nextInt();
+        System.out.println("Зарплата " + k + "-ого сотрудника за год " + b[k - 1]);
+
+        scanner.close();
+    }
+}
